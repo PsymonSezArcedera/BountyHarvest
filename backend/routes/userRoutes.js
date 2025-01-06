@@ -7,7 +7,7 @@ import bcrypt from 'bcrypt'
 const userRouter = express.Router();
 const SALT_ROUNDS = 6
 
-//#1 - GET ALL USERS
+//#1 GET ALL USERS
 userRouter.get(
     '/',
     expressAsyncHandler(async (req, res) => {
@@ -16,7 +16,7 @@ userRouter.get(
     })   
 );
 
-//#2 - GET USER BY ID
+//#2 GET USER BY ID
 userRouter.get(
     '/:id',
     expressAsyncHandler(async (req, res) => {
@@ -31,7 +31,7 @@ userRouter.get(
     })  
 );
 
-//#3 - CREATE NEW USER
+//#3 CREATE NEW USER
 userRouter.post(
     '/create',
     expressAsyncHandler(async (req, res) =>{
@@ -55,7 +55,7 @@ userRouter.post(
     })
 )
 
-//#4 - UPDATE USER INFORMATION
+//#4 UPDATE USER INFORMATION
 userRouter.put(
     '/:id',
     expressAsyncHandler(async (req, res) => {
