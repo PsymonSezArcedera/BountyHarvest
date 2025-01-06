@@ -6,6 +6,7 @@ import dotenv from "dotenv"
 dotenv.config({path: "./config.env"})
 import userRouter from "./routes/userRoutes.js";
 import productRouter from "./routes/productRoutes.js";
+import orderRouter from "./routes/orderRoutes.js";
 
 const app = express();
 const PORT = 3000
@@ -24,3 +25,4 @@ app.use(express.urlencoded({extended: true}));
 
 app.use("/users", userRouter);
 app.use("/products", productRouter);
+app.use("/orders", orderRouter);
