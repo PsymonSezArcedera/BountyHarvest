@@ -53,7 +53,7 @@ function CreateUser({buttonView}){
                     <hr></hr>
                     <h2 className="font-regular text-lg text-green-950 ">Password</h2>
                     <input className="w-96 h-8 bg-gray-200 rounded-full p-4 mb-5" placeholder={"Password"} type="password" onChange={handleChange} name="password" required maxLength={20}/>
-                    <button className="bg-green-950 w-72 h-16 text-white rounded-full font-bold text-lg mb-8 self-center" type="submit">Create Account</button>
+                    <button className="bg-green-950 w-72 h-16 text-white rounded-full font-bold text-lg mb-2 self-center" type="submit">Create Account</button>
                     <div className="flex flex-row self-center">
                         <h2 className="self-center  text-green-950 m-2">Already have an account?</h2>
                         {buttonView}

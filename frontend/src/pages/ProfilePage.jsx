@@ -17,7 +17,7 @@ function ProfilePage(){
     return(
         <>
             <label>Name:</label>
-            <h2 className="font-semibold">{user.user?.firstName}</h2>
+            <h2 className="font-semibold">{user.user?.firstName.concat(" ", user.user?.lastName)}</h2>
             <label>Email:</label>
             <h2>{user.user?.email}</h2>
             <label>Number:</label>

@@ -5,8 +5,8 @@ function ProductTile({product,person}){
 
     async function handleOrder(){
         const submitOrder = {
-            person: person.user.firstName,
-            product: product.productName,
+            person: person.user.firstName.concat(" ", person.user.lastName),
+            product: product.item,
             address: person.user.address,
             price: product.price
         }

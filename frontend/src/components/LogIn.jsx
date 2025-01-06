@@ -24,7 +24,7 @@ function LogIn({buttonView}){
         if(response){
             sessionStorage.setItem("User", response)
             axios.defaults.headers.common["Authorization"] = `Bearer ${response}`
-            navigate("/products")
+            navigate("/homepage")
         }
         else{
             alert("Login failed")
