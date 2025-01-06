@@ -2,6 +2,9 @@ import express from 'express';
 import expressAsyncHandler from 'express-async-handler';
 import User from '../models/userModel.js';
 import bcrypt from 'bcrypt'
+import jwt from 'jsonwebtoken'
+import dotenv from "dotenv"
+dotenv.config({path: "../config.env"})
 
 //For Password encryption
 const userRouter = express.Router();
@@ -77,7 +80,7 @@ userRouter.put(
     })
 )
 
-//#6 DELETE A USER
+//#5 DELETE A USER
 userRouter.delete(
     '/:id',
     expressAsyncHandler(async (req, res) => {
@@ -93,4 +96,26 @@ userRouter.delete(
     })
 )
 
+//#6 LOGIN USER
+userRouter.post(
+    '/signin',
+    expressAsyncHandler(async (req, res) =>{
+        const user = await User.findOne({email: req.body.email});
+        
+        if(user){
+            let confirmation = await bcrypt.compare(req.body.password, user.password);
+            if(confirmation){
+                const token = jwt.sign({user}, process.env.SECRETKEY, {expiresIn: "1h"})
+                res.json({success: true, token})
+            }
+            else{
+                res.json({success:false, message:"Incorrect password"})
+            }
+        }
+        else{
+            res.json({success:false, message:"User not found"})
+        }
+
+    })
+)
 export default userRouter

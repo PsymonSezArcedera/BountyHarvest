@@ -6,6 +6,7 @@ function NavBar(){
     const navigate = useNavigate()
 
     function handleLogout(){
+        sessionStorage.removeItem("User")
         navigate("/")
     }
 

@@ -1,5 +1,19 @@
+import { useState } from "react"
+import { createOrder } from "../api/orderAPI"
 
-function ProductTile({product}){
+function ProductTile({product,person}){
+
+    async function handleOrder(){
+        const submitOrder = {
+            person: person.user.firstName,
+            product: product.productName,
+            address: person.user.address,
+            price: product.price
+        }
+
+        await createOrder(submitOrder)
+    }
+
     return (
         <div className="m-10">
             <img src={product.image} alt="product image" className="w-64 h-64 object-cover"/>
@@ -11,7 +25,7 @@ function ProductTile({product}){
                 </div>
 
             </div>
-            <button className="bg-green-950 w-64 h-12 text-white font-bold cursor-pointer hover:bg-green-800">ORDER</button>
+            <button onClick = {handleOrder} className="bg-green-950 w-64 h-12 text-white font-bold cursor-pointer hover:bg-green-800">ORDER</button>
         </div>
     )
 }
