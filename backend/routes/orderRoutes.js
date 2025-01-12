@@ -52,13 +52,13 @@ orderRouter.put(
         const orderId = req.params.id;
         const order = await Order.findById(orderId);
         if(order){
-            person = req.body.person;
-            product = req.body.product;
-            image = req.body.image;
-            address = req.body.address;
-            price = req.body.price;
-            status = req.body.status;
-            quantity = req.body.quantity;
+            order.person = req.body.person;
+            order.product = req.body.product;
+            order.image = req.body.image;
+            order.address = req.body.address;
+            order.price = req.body.price;
+            order.status = req.body.status;
+            order.quantity = req.body.quantity;
             await order.save();
             res.send({message: 'Order updated'});
         }

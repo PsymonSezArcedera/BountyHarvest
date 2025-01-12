@@ -65,12 +65,12 @@ userRouter.put(
         const userId = req.params.id;
         const user = await User.findById(userId);
         if(user){
-            firstName = req.body.firstName;
-            lastName = req.body.lastName;
-            number = req.body.number;
-            address = req.body.address;
-            email = req.body.email;
-            password = req.body.password
+            user.firstName = req.body.firstName;
+            user.lastName = req.body.lastName;
+            user.number = req.body.number;
+            user.address = req.body.address;
+            user.email = req.body.email;
+            user.password = req.body.password
             await user.save();
             res.send({message: 'User information updated'});
         }
