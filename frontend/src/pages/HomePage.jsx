@@ -10,7 +10,7 @@ function HomePage(){
                         <h1 className="font-black text-6xl text-green-950">Bounty</h1>
                         <h1 className="font-black text-6xl text-yellow-500">Harvest</h1>
                 </div>
-                <h2 className="w-96 mt-10 font-regular text-lg text-green-950">Lorem ipsum dolor sit amet consectetur. Phasellus suscipit tortor nec potenti in ut lorem in. Non gravida volutpat lectus purus. Mattis in arcu platea dolor felis. Donec cursus tristique mauris sem sit amet hac.
+                <h2 className="w-96 mt-10 font-regular text-lg text-green-950">BountyHarvest, the premier online marketplace for all your agricultural needs. Our platform connects you directly with local farmers and producers, ensuring you get the freshest and highest quality products delivered right to your doorstep. Whether you're looking for organic vegetables, farm-fresh fruits, dairy products, or artisanal goods, BountyHarvest has it all.
                 </h2>
             </div>
             <div className="w-full flex flex-col m-8">
