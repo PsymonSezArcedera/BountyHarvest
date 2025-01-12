@@ -56,10 +56,10 @@ productRouter.put(
         const productId = req.params.id;
         const product = await Product.findById(productId);
         if(product){
-            item = req.body.item;
-            price = req.body.price;
-            stock = req.body.stock;
-            image = req.body.image;
+            product.item = req.body.item;
+            product.price = req.body.price;
+            product.stock = req.body.stock;
+            product.image = req.body.image;
             await product.save();
             res.send({message: 'Product updated'});
         }

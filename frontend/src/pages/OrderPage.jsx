@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { getOrders } from "../api/orderAPI"
+import OrderTile from "../components/OrderTile"
 import * as jwt_decode from "jwt-decode"
 
 function OrderPage(){
@@ -19,16 +20,18 @@ function OrderPage(){
     },[])
     
     return(
-        <>
-            Order Page
-            {data.map((order) => {
-                return(
-                    <>
-                        {order.product}
-                    </>
-                )
-            })}
-        </>
+        <div className='m-10'>
+            <h1 className='text-4xl font-black text-green-950'>ORDERS</h1>
+            <div className='flex flex-col flex-wrap justify-stretch content-center'>
+                {data.map((order) => {
+                    return (
+                        <>
+                        <OrderTile order={order} person={user}/>
+                        </>
+                    )
+                })}
+            </div>
+        </div>
     )
 }
 

@@ -34,8 +34,11 @@ orderRouter.post(
         const newOrder = new Order({
             person : req.body.person,
             product : req.body.product,
+            image: req.body.image,
             address : req.body.address,
-            price : req.body.price
+            price : req.body.price,
+            status: req.body.status,
+            quantity: req.body.quantity
         });
         const order = await newOrder.save();
         res.send({message: 'Order created', order});
@@ -51,8 +54,11 @@ orderRouter.put(
         if(order){
             person = req.body.person;
             product = req.body.product;
+            image = req.body.image;
             address = req.body.address;
             price = req.body.price;
+            status = req.body.status;
+            quantity = req.body.quantity;
             await order.save();
             res.send({message: 'Order updated'});
         }
