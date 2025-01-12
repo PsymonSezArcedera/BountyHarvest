@@ -42,7 +42,7 @@ function LogIn({buttonView}){
                         <h1 className="font-black text-5xl text-yellow-500">In</h1>
                     </div>
                     <h2 className="font-regular text-lg text-green-950 ">Email</h2>
-                    <input className="w-96 h-12 bg-gray-200 rounded-full p-4 mb-5" placeholder={"Email"} onChange={handleChange} name="email" required maxLength={40}/>
+                    <input className="w-96 h-12 bg-gray-200 rounded-full p-4 mb-5" placeholder={"Email"} type="email" onChange={handleChange} name="email" required maxLength={40}/>
                     <hr className="mb-5"></hr>
                     <h2 className="font-regular text-lg text-green-950">Password</h2>
                     <input className="w-96 h-12 bg-gray-200 rounded-full p-4 mb-10" placeholder={"Password"} type="password" onChange={handleChange} name="password" required maxLength={20}/>

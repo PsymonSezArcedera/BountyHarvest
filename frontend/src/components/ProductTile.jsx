@@ -26,7 +26,7 @@ function ProductTile({product,person}){
             product: product.item,
             image: product.image,
             address: person.user.address,
-            price: product.price,
+            price: product.price * quantity,
             status : "To ship",
             quantity: quantity
         }
