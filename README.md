@@ -7,7 +7,7 @@ Welcome to BountyHarvest, a web application built using the MERN stack (MongoDB,
 - Run `git clone` to create a local repository in your machine.
 - Navigate to the backend folder and run `npm i` to install the dependencies.
 - After installing the dependecies on backend folder, run the command `node server.js` to start the server.
-- Navigae to the frontend folder and run `npm i` to install the dependencies.
+- Navigate to the frontend folder and run `npm i` to install the dependencies.
 - After installing the dependecies on the frontend folder, run the comman `npm run dev` to start the application.
 
 ## Features
